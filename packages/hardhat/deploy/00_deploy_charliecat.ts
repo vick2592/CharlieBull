@@ -6,17 +6,15 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deploy } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  console.log("Deploying LionHeart token with the account:", deployer);
-
-  await deploy("LionHeart", {
+  await deploy("CharlieCat", {
     from: deployer,
     args: [],
     log: true,
   });
 
-  const LionHeart = await deployments.get("LionHeart");
-  console.log("LionHeart token deployed to:", LionHeart.address);
+  const CharlieCat = await deployments.get("CharlieCat");
+  console.log("CharlieCat token deployed to:", CharlieCat.address);
 };
 
 export default func;
-func.tags = ["LionHeart"];
+func.tags = ["CharlieCat"];
