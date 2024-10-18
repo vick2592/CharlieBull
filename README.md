@@ -1,11 +1,11 @@
-# 🏗 Scaffold-ETH 2
+# 🐱 Charlie Cat
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+😺 Welcome to Charlie Cat, the most lovable meme coin on the Ethereum blockchain! Charlie Cat is here to bring joy and fun to the world of decentralized applications (dapps). With Charlie Cat, you can easily create and deploy smart contracts and build user interfaces that interact with those contracts.
 
 ⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
 
@@ -27,7 +27,7 @@ Before you begin, you need to install the following tools:
 
 ## Quickstart
 
-To get started with Scaffold-ETH 2, follow the steps below:
+To get started with Charlie Cat, follow the steps below:
 
 1. Install dependencies if it was skipped in CLI:
 
@@ -73,8 +73,8 @@ Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building wit
 
 To know more about its features, check out our [website](https://scaffoldeth.io).
 
-## Contributing to Scaffold-ETH 2
+## Contributing to Charlie Cat
 
-We welcome contributions to Scaffold-ETH 2!
+We welcome contributions to Charlie Cat!
 
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+Reach out to @VickzInBK or @NFTLadyEve on X.
