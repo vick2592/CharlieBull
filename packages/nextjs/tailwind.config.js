@@ -43,15 +43,15 @@ module.exports = {
         dark: {
           primary: "#212638",
           "primary-content": "#F9FBFF",
-          secondary: "#323f61",
+          secondary: "#0f0c91",
           "secondary-content": "#F9FBFF",
           accent: "#4969A6",
           "accent-content": "#F9FBFF",
           neutral: "#F9FBFF",
           "neutral-content": "#385183",
-          "base-100": "#385183",
-          "base-200": "#2A3655",
-          "base-300": "#212638",
+          "base-100": "#1d19e1", // Updated to match the blue shade of your logo
+          "base-200": "#3a36f2", // Lighter shade
+          "base-300": "#0f0c91", // Darker shade
           "base-content": "#F9FBFF",
           info: "#385183",
           success: "#34EEB6",
