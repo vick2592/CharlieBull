@@ -50,8 +50,8 @@ module.exports = {
           neutral: "#F9FBFF",
           "neutral-content": "#385183",
           "base-100": "#1d19e1", // Updated to match the blue shade of your logo
-          "base-200": "#3a36f2", // Lighter shade
-          "base-300": "#0f0c91", // Darker shade
+          "base-200": "#0f0c91", // Darker shade
+          "base-300": "#0a0861", // Even darker shade
           "base-content": "#F9FBFF",
           info: "#385183",
           success: "#34EEB6",

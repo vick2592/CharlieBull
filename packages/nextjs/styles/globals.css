@@ -2,6 +2,23 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
 :root,
 [data-theme] {
   background: oklch(var(--b2));
