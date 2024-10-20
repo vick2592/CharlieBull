@@ -10,10 +10,12 @@ import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
+  const layingRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const headshotRef = useRef<HTMLDivElement>(null);
   const sittingCatRef = useRef<HTMLDivElement>(null);
   const blockExplorerRef = useRef<HTMLDivElement>(null);
+  const logoContainerRef = useRef<HTMLDivElement>(null); // New ref for the logo container
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +30,7 @@ const Home: NextPage = () => {
       { threshold: 0.1 },
     );
 
-    [imageRef, headshotRef, sittingCatRef, blockExplorerRef].forEach(ref => {
+    [layingRef, imageRef, headshotRef, sittingCatRef, blockExplorerRef, logoContainerRef].forEach(ref => {
       if (ref.current) {
         observer.observe(ref.current);
 
@@ -41,7 +43,7 @@ const Home: NextPage = () => {
     });
 
     return () => {
-      [imageRef, headshotRef, sittingCatRef, blockExplorerRef].forEach(ref => {
+      [layingRef, imageRef, headshotRef, sittingCatRef, blockExplorerRef, logoContainerRef].forEach(ref => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
@@ -51,7 +53,40 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
+      <div className="bg-base-100 flex items-center flex-col flex-grow pt-10">
+        <div className="mt-1">
+          <h1 className="text-center rounded-lg">
+            <span className="block text-4xl font-bold">$CHAR</span>
+          </h1>
+          <div className="ml-20 mr-20 text-center">
+            <p className="text-2xl">Welcome to Charlie Cat. He is lovable, but watch out, he may bite!</p>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center mt-5" ref={logoContainerRef}>
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+            <Image src="/TwitterXLogo.png" alt="Twitter X Logo" width={75} height={75} className="rounded-lg mx-2" />
+          </a>
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+            <Image src="/AgniLogo.png" alt="Agni Logo" width={75} height={75} className="rounded-lg mx-2" />
+          </a>
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+            <Image src="/TelegramLogo.png" alt="Telegram Logo" width={75} height={75} className="rounded-lg mx-2" />
+          </a>
+        </div>
+
+        <div className="ml-20 px-5 mb-10 mt-7 relative" ref={layingRef}>
+          <Image
+            src="/CharlieLaying2.png"
+            alt="Charlie Laying"
+            width={200}
+            height={200}
+            className="rounded-lg h-auto"
+          />
+        </div>
+
+        <hr className="my-8 border-t-2 border-blue-700 w-full" />
+
         <div className="px-5 relative" ref={imageRef}>
           <div className="absolute top-0 left-0 right-0 z-10 p-4">
             <h1 className="text-center p-4 rounded-lg">
@@ -67,7 +102,9 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <div className="flex-grow bg-base-300 w-full mt-10 px-5 py-10">
+        <hr className="my-8 border-t-2 border-blue-700 w-full" />
+
+        <div className="flex-grow bg-base-100 w-full mt-10 px-5 py-10">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col items-center" ref={sittingCatRef}>
               <Image
@@ -94,6 +131,8 @@ const Home: NextPage = () => {
             </div> */}
           </div>
         </div>
+
+        <hr className="my-8 border-t-2 border-blue-700 w-full" />
 
         <div className="px-5 mt-10">
           <div className="flex justify-center items-center" ref={headshotRef}>

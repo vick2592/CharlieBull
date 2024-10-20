@@ -17,10 +17,10 @@ module.exports = {
           "accent-content": "#212638",
           neutral: "#212638",
           "neutral-content": "#ffffff",
-          "base-100": "#ffffff",
-          "base-200": "#f4f8ff",
-          "base-300": "#DAE8FF",
-          "base-content": "#212638",
+          "base-100": "#E0F7FA", // Light blue shade
+          "base-200": "#B2EBF2", // Slightly darker light blue
+          "base-300": "#80DEEA", // Even darker light blue
+          "base-content": "#1d19e1", // Updated to #1d19e1
           info: "#93BBFB",
           success: "#34EEB6",
           warning: "#FFCF72",
@@ -50,8 +50,8 @@ module.exports = {
           neutral: "#F9FBFF",
           "neutral-content": "#385183",
           "base-100": "#1d19e1", // Updated to match the blue shade of your logo
-          "base-200": "#0f0c91", // Darker shade
-          "base-300": "#0a0861", // Even darker shade
+          "base-200": "#0f0c91", // Darker shade "#0f0c91",
+          "base-300": "#0a0861", // Even darker shade "#0a0861",
           "base-content": "#F9FBFF",
           info: "#385183",
           success: "#34EEB6",
@@ -81,6 +81,10 @@ module.exports = {
       },
       animation: {
         "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      fontFamily: {
+        popcat: ["Popcat", "sans-serif"],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
       },
     },
   },
