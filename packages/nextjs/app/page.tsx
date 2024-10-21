@@ -2,20 +2,17 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-// import Link from "next/link";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
-// import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
   const { address: connectedAddress } = useAccount();
-  const layingRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const headshotRef = useRef<HTMLDivElement>(null);
-  const sittingCatRef = useRef<HTMLDivElement>(null);
-  const blockExplorerRef = useRef<HTMLDivElement>(null);
-  const logoContainerRef = useRef<HTMLDivElement>(null); // New ref for the logo container
+  const homeRef = useRef<HTMLDivElement>(null);
+  const howToBuyRef = useRef<HTMLDivElement>(null);
+  const tokenomicsRef = useRef<HTMLDivElement>(null);
+  const roadmapRef = useRef<HTMLDivElement>(null);
+  const logoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,11 +27,10 @@ const Home: NextPage = () => {
       { threshold: 0.1 },
     );
 
-    [layingRef, imageRef, headshotRef, sittingCatRef, blockExplorerRef, logoContainerRef].forEach(ref => {
+    [homeRef, howToBuyRef, tokenomicsRef, roadmapRef, logoContainerRef].forEach(ref => {
       if (ref.current) {
         observer.observe(ref.current);
 
-        // Fallback to ensure animation is applied if the element is already in the viewport
         if (ref.current.getBoundingClientRect().top < window.innerHeight) {
           ref.current.classList.add("fade-in");
           observer.unobserve(ref.current);
@@ -43,7 +39,7 @@ const Home: NextPage = () => {
     });
 
     return () => {
-      [layingRef, imageRef, headshotRef, sittingCatRef, blockExplorerRef, logoContainerRef].forEach(ref => {
+      [homeRef, howToBuyRef, tokenomicsRef, roadmapRef, logoContainerRef].forEach(ref => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
@@ -52,61 +48,108 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <>
-      <div className="bg-base-100 flex items-center flex-col flex-grow pt-10">
-        <div className="mt-1">
+    <div className="bg-base-100 flex flex-col flex-grow">
+      <section id="home" ref={homeRef} className="pt-[calc(var(--header-height)+2.5rem)] lg:pt-10">
+        <div className="flex flex-col mt-10 items-center">
           <h1 className="text-center rounded-lg">
-            <span className="block text-4xl font-bold">$CHAR</span>
+            <span className="font-creambeige font-bold leading-tight text-5xl">$CHAR</span>
           </h1>
-          <div className="ml-20 mr-20 text-center">
-            <p className="text-2xl">Welcome to Charlie Cat. He is lovable, but watch out, he may bite!</p>
+          <div className="mx-5 md:mx-20 p-3 text-center">
+            <div className="text-4xl">Welcome to Charlie Cat. He is lovable, but watch out, </div>
+            <div className="text-4xl italic">HE MAY BITE!</div>
           </div>
         </div>
 
-        <div className="flex justify-center items-center mt-5" ref={logoContainerRef}>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image src="/TwitterXLogo.png" alt="Twitter X Logo" width={75} height={75} className="rounded-lg mx-2" />
-          </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image src="/AgniLogo.png" alt="Agni Logo" width={75} height={75} className="rounded-lg mx-2" />
-          </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image src="/TelegramLogo.png" alt="Telegram Logo" width={75} height={75} className="rounded-lg mx-2" />
-          </a>
-        </div>
-
-        <div className="ml-20 px-5 mb-10 mt-7 relative" ref={layingRef}>
+        <div className="flex justify-center px-5 mb-10 mt-20 ml-20">
           <Image
-            src="/CharlieLaying2.png"
+            src="/CharlieLayingFlipped.png"
             alt="Charlie Laying"
-            width={200}
-            height={200}
+            width={250}
+            height={250}
             className="rounded-lg h-auto"
           />
         </div>
+      </section>
 
-        <hr className="my-8 border-t-2 border-blue-700 w-full" />
+      <hr className="border-t-2 border-blue-700 w-full" />
 
-        <div className="px-5 relative" ref={imageRef}>
-          <div className="absolute top-0 left-0 right-0 z-10 p-4">
+      <section id="how-to-buy" ref={howToBuyRef} className="pt-20 lg:pt-10">
+        <div className="px-5">
+          <div className="flex justify-center items-center mt-10" ref={logoContainerRef}>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/KrakenLogo.png"
+                alt="Kraken Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-60"
+              />
+            </a>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image src="/HTXLogo.png" alt="HTX Logo" width={75} height={75} className="rounded-lg mx-5 opacity-60" />
+            </a>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/ByBitLogo.png"
+                alt="ByBit Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-60"
+              />
+            </a>
+          </div>
+          <div className="flex justify-center items-center mt-10" ref={logoContainerRef}>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/MantleLogo.png"
+                alt="Mantle Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-60"
+              />
+            </a>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/AgniLogo.png"
+                alt="Agni Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-60"
+              />
+            </a>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/FusionXLogo.png"
+                alt="Fusion X Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-60"
+              />
+            </a>
+          </div>
+          <div className="mt-10 p-4">
             <h1 className="text-center p-4 rounded-lg">
-              <span className="block text-4xl font-bold text-white">Owe, Charlie bit me!</span>
+              <span className="block text-3xl font-bold">Owe, Charlie bit me!</span>
             </h1>
           </div>
-          <Image
-            src="/CharleyBaby.JPG"
-            alt="Charlie Baby"
-            width={600}
-            height={600}
-            className="rounded-lg w-full h-auto"
-          />
+          <div>
+            <Image
+              src="/charliebabie.jpg"
+              alt="Charlie Baby"
+              width={600}
+              height={600}
+              className="rounded-lg w-full h-auto"
+            />
+          </div>
         </div>
+      </section>
 
-        <hr className="my-8 border-t-2 border-blue-700 w-full" />
+      <hr className="border-t-2 border-blue-700 w-full mt-10" />
 
-        <div className="flex-grow bg-base-100 w-full mt-10 px-5 py-10">
+      <section id="tokenomics" ref={tokenomicsRef} className="pt-[var(--header-height)] lg:pt-10">
+        <div className="w-full px-5 py-10">
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col items-center" ref={sittingCatRef}>
+            <div className="flex flex-col items-center">
               <Image
                 src="/CharleyCatSitting.png"
                 alt="Charlie Cat Sitting"
@@ -116,26 +159,15 @@ const Home: NextPage = () => {
               />
               <p className="m-2 text-center">Charlie loves to sit and watch!</p>
             </div>
-            {/* <div
-              className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl"
-              ref={blockExplorerRef}
-            >
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div> */}
           </div>
         </div>
+      </section>
 
-        <hr className="my-8 border-t-2 border-blue-700 w-full" />
+      <hr className="border-t-2 border-blue-700 w-full mt-10" />
 
+      <section id="roadmap" ref={roadmapRef} className="pt-[var(--header-height)] lg:pt-10">
         <div className="px-5 mt-10">
-          <div className="flex justify-center items-center" ref={headshotRef}>
+          <div className="flex justify-center items-center">
             <Image
               src="/CharleyCatHeadshot.JPG"
               alt="Charlie Cat Headshot"
@@ -144,13 +176,13 @@ const Home: NextPage = () => {
               className="rounded-lg"
             />
           </div>
-          <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row">
+          <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row mt-5">
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 };
 

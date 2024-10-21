@@ -21,6 +21,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'CreamBeige';
+  src: url('/fonts/Cream Beige.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -29,6 +36,7 @@
 :root,
 [data-theme] {
   background: oklch(var(--b2));
+  --header-height: 0px;
 }
 
 body {

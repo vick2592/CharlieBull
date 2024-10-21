@@ -84,7 +84,8 @@ module.exports = {
       },
       fontFamily: {
         popcat: ["Popcat", "sans-serif"],
-        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        sans: ["Arial", "Helvetica", "sans-serif"],
+        creambeige: ["CreamBeige", "sans-serif"],
       },
     },
   },
