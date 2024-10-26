@@ -1,16 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-// import { SquidWidget } from "@0xsquid/widget";
 import type { NextPage } from "next";
 // import { useAccount } from "wagmi";
 import { Address } from "~~/components/scaffold-eth";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 
 // Dynamically import SquidWidget with SSR disabled
-// const SquidWidget = dynamic(() => import("@0xsquid/widget").then(mod => mod.SquidWidget), { ssr: false });
+const SquidWidget = dynamic(() => import("@0xsquid/widget").then(mod => mod.SquidWidget), { ssr: false });
 
 const Home: NextPage = () => {
   // const { address: connectedAddress } = useAccount();
@@ -173,14 +172,20 @@ const Home: NextPage = () => {
           <div className="flex justify-center items-center">
             <div className="flex flex-col justify-center items-center text-center">
               <p className="text-lg font-semibold p-5">Token address:</p>
-              <Address address="0x5FbDB2315678afecb367f032d93F642f64180aa3" />
+              <Address address="0x5FbDB2315678afecb367f032d93F642f64180aa3" disableAddressLink={true} format="short" />
             </div>
           </div>
           <div className="flex justify-center items-center p-20">
+            <SquidWidget
+              config={{
+                integratorId: process.env.NEXT_PUBLIC_SQUID || "", // Use the environment variable
+                slippage: 3,
+              }}
+            />
+            {/* Customize Once the widget works */}
             {/* <SquidWidget
               config={{
                 integratorId: "charlie-cat-4be04e70-ea71-4a08-a667-06840f4fb3b6",
-                companyName: "Custom",
                 style: {
                   neutralContent: "#6A61FF",
                   baseContent: "#FDFDFD",
@@ -202,7 +207,7 @@ const Home: NextPage = () => {
                 slippage: 1.5,
                 infiniteApproval: false,
                 enableExpress: true,
-                apiUrl: "https://api.squidrouter.com",
+                apiUrl: "https://dev.api.squidrouter.com",
                 comingSoonChainIds: [],
                 titles: {
                   swap: "Swap",
