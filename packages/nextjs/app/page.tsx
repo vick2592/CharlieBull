@@ -3,10 +3,13 @@
 import { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { AppConfig } from "../types/types";
 import type { NextPage } from "next";
 // import { useAccount } from "wagmi";
 import { Address } from "~~/components/scaffold-eth";
 import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
+
+// Import the AppConfig interface
 
 // Dynamically import SquidWidget with SSR disabled
 const SquidWidget = dynamic(() => import("@0xsquid/widget").then(mod => mod.SquidWidget), { ssr: false });
@@ -18,6 +21,36 @@ const Home: NextPage = () => {
   const tokenomicsRef = useRef<HTMLDivElement>(null);
   const roadmapRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
+
+  const config: AppConfig = {
+    integratorId: process.env.NEXT_PUBLIC_SQUID || "", // Use the environment variable
+    companyName: "Charlie",
+    infiniteApproval: false,
+    enableExpress: true,
+    apiUrl: "https://apiplus.squidrouter.com/",
+    comingSoonChainIds: [],
+    titles: {
+      swap: "Swap",
+      settings: "Settings",
+      wallets: "Wallets",
+      tokens: "Select Token",
+      chains: "Select Chain",
+      history: "History",
+      transaction: "Transaction",
+      allTokens: "Select Token",
+      destination: "Destination address",
+      depositAddress: "Deposit address",
+      seimetamask: "Important message!",
+    },
+    priceImpactWarnings: {
+      warning: 3,
+      critical: 5,
+    },
+    environment: "mainnet",
+    showOnRampLink: true,
+    defaultTokens: [],
+    styleType: "dark",
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -177,58 +210,12 @@ const Home: NextPage = () => {
           </div>
           <div className="flex justify-center items-center p-20">
             <SquidWidget
+              config={config} // Use the config object
+            />
+            {/* <SquidWidget
               config={{
                 integratorId: process.env.NEXT_PUBLIC_SQUID || "", // Use the environment variable
                 slippage: 3,
-              }}
-            />
-            {/* Customize Once the widget works */}
-            {/* <SquidWidget
-              config={{
-                integratorId: "charlie-cat-4be04e70-ea71-4a08-a667-06840f4fb3b6",
-                style: {
-                  neutralContent: "#6A61FF",
-                  baseContent: "#FDFDFD",
-                  base100: "#342C90",
-                  base200: "#181C63",
-                  base300: "#13164E",
-                  error: "#ED6A5E",
-                  warning: "#FFB155",
-                  success: "#2EAEB0",
-                  primary: "#6C5BE0",
-                  secondary: "#4030FA",
-                  secondaryContent: "#F6F7FB",
-                  neutral: "#0C1536",
-                  roundedBtn: "8px",
-                  roundedCornerBtn: "999px",
-                  roundedBox: "12px",
-                  roundedDropDown: "8px",
-                },
-                slippage: 1.5,
-                infiniteApproval: false,
-                enableExpress: true,
-                apiUrl: "https://dev.api.squidrouter.com",
-                comingSoonChainIds: [],
-                titles: {
-                  swap: "Swap",
-                  settings: "Settings",
-                  wallets: "Wallets",
-                  tokens: "Select Token",
-                  chains: "Select Chain",
-                  history: "History",
-                  transaction: "Transaction",
-                  allTokens: "Select Token",
-                  destination: "Destination address",
-                  depositAddress: "Deposit address",
-                  seimetamask: "Important message!",
-                },
-                priceImpactWarnings: {
-                  warning: 3,
-                  critical: 5,
-                },
-                environment: "mainnet",
-                showOnRampLink: true,
-                defaultTokens: [],
               }}
             /> */}
           </div>
@@ -238,12 +225,12 @@ const Home: NextPage = () => {
       <hr className="border-t-2 border-blue-700 w-full mt-10" />
 
       <section id="tokenomics" ref={tokenomicsRef} className="pt-20 lg:pt-10">
-        <div className="text-4xl text-center font-bold">Tokenomics</div>
+        <div className="text-4xl pb-5 text-center font-bold">Tokenomics</div>
         <div>
-          <Image src="/Tokenomics.jpg" alt="Tokenomics" width={600} height={600} className="rounded-lg w-full h-auto" />
+          <Image src="/Tokenomics.png" alt="Tokenomics" width={600} height={600} className="rounded-lg w-full h-auto" />
         </div>
-        <div className="text-4xl text-center italic">Owe, Charlie!</div>
-        <div className="text-4xl text-center italic">That really hurt.</div>
+        <div className="text-4xl text-center pt-2.5 italic">Owe, Charlie!</div>
+        <div className="text-4xl text-center pb-2.5 italic">That really hurt.</div>
         <div>
           <Image
             src="/CharlieBaby2.jpg"
@@ -260,7 +247,9 @@ const Home: NextPage = () => {
       {/* <section id="roadmap" ref={roadmapRef} className="pt-[var(--header-height)] lg:pt-10"> */}
       <section id="roadmap" ref={roadmapRef} className="pt-20 lg:pt-10">
         <div className="w-full px-5">
-          <div className="text-4xl text-center font-bold">Roadmap</div>
+          <div className="text-4xl text-center pb-5 font-bold">Roadmap</div>
+          <div className="text-4xl text-center p-5 italic">Step 1: Buy</div>
+          <div className="text-4xl text-center p-5 italic">Step 2: HODL</div>
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col items-center">
               <Image
@@ -270,7 +259,7 @@ const Home: NextPage = () => {
                 height={600}
                 className="rounded-lg"
               />
-              <div className="text-4xl text-center italic">Buy, HODL, Lambo</div>
+              <div className="text-4xl text-center p-5 italic">Step 3: Lambo</div>
             </div>
           </div>
         </div>

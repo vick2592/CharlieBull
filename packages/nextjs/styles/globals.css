@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Import squid styles */
+@import '../styles/squid.css';
+
 @keyframes fadeIn {
   from {
     opacity: 0;
