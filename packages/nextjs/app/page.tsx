@@ -177,7 +177,7 @@ const Home: NextPage = () => {
               alt="Polygon Logo"
               width={75}
               height={75}
-              className="rounded-lg mx-5 opacity-60"
+              className="rounded-lg mx-5 opacity-75"
             />
           </a>
           <a href="https://google.com" target="_blank" rel="noopener noreferrer">
@@ -186,7 +186,7 @@ const Home: NextPage = () => {
               alt="Binance Chain Logo"
               width={75}
               height={75}
-              className="rounded-lg mx-5 opacity-60"
+              className="rounded-lg mx-5 opacity-75"
             />
           </a>
         </div>
@@ -218,6 +218,28 @@ const Home: NextPage = () => {
                 slippage: 3,
               }}
             /> */}
+          </div>
+          <div className="flex justify-center items-center pb-10" ref={logoContainerRef}>
+            <div className="text-3xl text-gray-600 dark:text-gray-300">Powered by</div>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/AxelarLogo.png"
+                alt="Axelar Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-85"
+              />
+            </a>
+            <div className="text-3xl text-gray-600 dark:text-gray-300"> & </div>
+            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/SquidLogo.png"
+                alt="Squid Logo"
+                width={75}
+                height={75}
+                className="rounded-lg mx-5 opacity-85"
+              />
+            </a>
           </div>
         </div>
       </section>
