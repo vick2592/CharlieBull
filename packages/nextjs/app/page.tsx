@@ -22,7 +22,7 @@ const Home: NextPage = () => {
   const roadmapRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
 
-  // Updated config
+  // config.ts
   const config: AppConfig = {
     integratorId: "squid-swap-widget-v2",
     theme: {
@@ -118,8 +118,8 @@ const Home: NextPage = () => {
         chainId: "1",
       },
     },
+    degenMode: true, // Added and enabled the new property
   };
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -342,6 +342,7 @@ const Home: NextPage = () => {
                 width={600}
                 height={600}
                 className="rounded-lg"
+                unoptimized
               />
               <div className="text-4xl text-center p-5 italic">Step 3: Lambo</div>
             </div>

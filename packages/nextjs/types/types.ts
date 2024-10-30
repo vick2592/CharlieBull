@@ -135,4 +135,5 @@ export interface AppConfig {
   environment?: string;
   showOnRampLink?: boolean;
   defaultTokens?: string[];
+  degenMode?: boolean;
 }
