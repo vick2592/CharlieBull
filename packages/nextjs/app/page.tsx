@@ -276,7 +276,7 @@ const Home: NextPage = () => {
               <Address address="0x5FbDB2315678afecb367f032d93F642f64180aa3" disableAddressLink={true} format="short" />
             </div>
           </div>
-          <div className="flex justify-center items-center p-20">
+          <div id="SquidWidget" className="flex justify-center items-center p-20">
             <SquidWidget
               config={config} // Use the config object
             />

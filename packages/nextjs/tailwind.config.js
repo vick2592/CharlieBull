@@ -73,6 +73,7 @@ module.exports = {
         },
       },
     ],
+    // prefix: "daisy-"
   },
   theme: {
     extend: {
