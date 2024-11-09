@@ -161,8 +161,8 @@ const Home: NextPage = () => {
             <span className="font-creambeige font-bold leading-tight text-5xl">$CHAR</span>
           </h1>
           <div className="mx-5 md:mx-20 p-3 text-center">
-            <div className="text-4xl text-center">Welcome to Charlie Cat,</div>
-            <div className="text-4xl text-center font-bold">The first Cross-Chain meme coin!</div>
+            <div className="text-4xl text-center m-1">Welcome to Charlie Bull,</div>
+            <div className="text-4xl text-center font-bold">The first Cross-Chain meme coin for the 2025 Bull Run!</div>
           </div>
         </div>
 
@@ -272,7 +272,7 @@ const Home: NextPage = () => {
           </div>
           <div className="flex justify-center items-center">
             <div className="flex flex-col justify-center items-center text-center">
-              <p className="text-lg font-semibold p-5">Token address:</p>
+              <p className="text-lg font-semibold p-5">Charlie Bull Token address:</p>
               <Address address="0x5FbDB2315678afecb367f032d93F642f64180aa3" disableAddressLink={true} format="short" />
             </div>
           </div>
@@ -313,7 +313,7 @@ const Home: NextPage = () => {
         <div>
           <Image src="/Tokenomics.png" alt="Tokenomics" width={600} height={600} className="rounded-lg w-full h-auto" />
         </div>
-        <div className="text-4xl text-center pt-2.5 italic">Owe, Charlie!</div>
+        <div className="text-4xl text-center pt-2.5 italic">Ouch, Charlie!</div>
         <div className="text-4xl text-center pb-2.5 italic">That really hurt.</div>
         <div>
           <Image
