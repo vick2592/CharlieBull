@@ -42,10 +42,10 @@ export const Footer = () => {
           <SwitchTheme className={`pointer-events-auto ml-auto ${isLocalNetwork ? "self-end md:self-auto" : ""}`} />
         </div>
       </div>
-      <div className="px-5 mt-10 pb-5">
+      <div className="px-5 mt-10">
         <ul className="flex items-end justify-center space-x-4 lg:space-x-8">
           {/* Twitter Logo */}
-          <li className="flex items-end">
+          <li className="flex items-end pb-5">
             <a
               href="https://x.com/NFTLadyEve"
               target="_blank"
@@ -56,19 +56,13 @@ export const Footer = () => {
             </a>
           </li>
 
-          {/* Charlie Cat Image */}
+          {/* Charlie Bull Image */}
           <li className="flex items-center">
-            <Image
-              src="/CharleyCatHeadshot.JPG"
-              alt="Charlie Cat Headshot"
-              width={300}
-              height={300}
-              className="rounded-lg"
-            />
+            <Image src="/CharlieBull.png" alt="Charlie Bull Headshot" width={300} height={300} className="rounded-lg" />
           </li>
 
           {/* Telegram Logo */}
-          <li className="flex items-end">
+          <li className="flex items-end pb-5">
             <a
               href="https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA"
               target="_blank"

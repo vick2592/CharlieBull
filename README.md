@@ -1,11 +1,11 @@
-# 🐱 Charlie Cat
+# 🐶 Charlie Bull
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
 
-😺 Welcome to Charlie Cat, the most lovable meme coin on the Ethereum blockchain! Charlie Cat is here to bring joy and fun to the world of decentralized applications (dapps). With Charlie Cat, you can easily create and deploy smart contracts and build user interfaces that interact with those contracts.
+😺 Welcome to Charlie Bull, the most lovable meme coin on the Ethereum blockchain! Charlie Bull is here to bring joy and fun to the world of decentralized applications (dapps). With Charlie Bull, you can easily take apart of our awesome community and swap any of your tokens on any EVM chain within our awesome network.
 
 ⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
 
@@ -25,14 +25,14 @@ Before you begin, you need to install the following tools:
 - Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
 - [Git](https://git-scm.com/downloads)
 
-## Quickstart
+## Quickstart for Local Testing
 
-To get started with Charlie Cat, follow the steps below:
+To get started with Charlie Bull, follow the steps below:
 
 1. Install dependencies if it was skipped in CLI:
 
 ```
-cd my-dapp-example
+cd CharlieBull
 yarn install
 ```
 
@@ -62,19 +62,12 @@ Visit your app on: `http://localhost:3000`. You can interact with your smart con
 
 Run smart contract test with `yarn hardhat:test`
 
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
+- Edit your smart contract `CharlieBull.sol` in `packages/hardhat/contracts`
 - Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
 - Edit your deployment scripts in `packages/hardhat/deploy`
 
+## Contributing to Charlie Bull
 
-## Documentation
+We welcome contributions to Charlie Bull!
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Charlie Cat
-
-We welcome contributions to Charlie Cat!
-
-Reach out to @VickzInBK or @NFTLadyEve on X.
+Reach out to @VickzInBK on X or @NBigOnIsig on Instagram.

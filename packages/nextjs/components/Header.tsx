@@ -86,7 +86,8 @@ export const Header = () => {
               <Image alt="Charlie" className="cursor-pointer" fill src="/logo.svg" />
             </div>
             <div className="flex flex-col">
-              <span className="font-creambeige font-bold leading-tight mt-6 ml-2 text-3xl">Charlie</span>
+              {/* <span className="font-sawer font-bold leading-tight text-3xl">Charlie</span> */}
+              <span className="font-creambeige font-bold leading-tight text-3xl">Charlie</span>
             </div>
           </a>
           <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2 ml-4">
@@ -97,13 +98,11 @@ export const Header = () => {
           <div className="hidden lg:block">
             <RainbowKitCustomConnectButton />
           </div>
-          <div className="lg:hidden dropdown dropdown-end" ref={burgerMenuRef}>
+          <div className="lg:hidden" ref={burgerMenuRef}>
             <label
               tabIndex={0}
               className={`ml-1 btn btn-ghost ${isDrawerOpen ? "hover:bg-secondary" : "hover:bg-transparent"}`}
-              onClick={() => {
-                setIsDrawerOpen(prevIsOpenState => !prevIsOpenState);
-              }}
+              onClick={() => setIsDrawerOpen(prevIsOpenState => !prevIsOpenState)}
             >
               <div className="w-10 h-10 relative">
                 <Bars3Icon
@@ -118,19 +117,23 @@ export const Header = () => {
                 />
               </div>
             </label>
-            {isDrawerOpen && (
-              <ul
-                tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-                onClick={() => {
-                  setIsDrawerOpen(false);
-                }}
-              >
-                <HeaderMenuLinks />
-              </ul>
-            )}
           </div>
         </div>
+      </div>
+      <div
+        className={`
+    fixed left-0 right-0
+    overflow-hidden
+    transition-all duration-300 ease-in-out
+    ${isDrawerOpen ? "h-auto opacity-100" : "h-0 opacity-0"}
+    top-[var(--header-height)]
+    bg-base-100 shadow-lg
+    lg:hidden
+  `}
+      >
+        <ul className="menu menu-compact w-full p-4 items-center text-center">
+          <HeaderMenuLinks />
+        </ul>
       </div>
     </div>
   );

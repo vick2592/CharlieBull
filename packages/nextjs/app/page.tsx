@@ -162,14 +162,14 @@ const Home: NextPage = () => {
           </h1>
           <div className="mx-5 md:mx-20 p-3 text-center">
             <div className="text-4xl text-center m-1">Welcome to Charlie Bull,</div>
-            <div className="text-4xl text-center font-bold">The first Cross-Chain meme coin for the 2025 Bull Run!</div>
+            <div className="text-4xl text-center font-bold">The first Cross-Chain meme coin on Ethereum!</div>
           </div>
         </div>
 
-        <div className="flex justify-center px-5 mb-10 ml-20">
+        <div className="flex justify-center px-5 mb-10">
           <Image
-            src="/CharleyRelaxing.gif"
-            alt="Charlie Laying"
+            src="/PantingCharlie2.gif"
+            alt="Charlie Panting"
             width={400}
             height={400}
             className="rounded-lg h-auto"
@@ -260,7 +260,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <hr className="border-t-2 border-blue-700 w-full" />
+      <hr className="border-t-2 border-secondary w-full" />
 
       <section id="buy-it-now" ref={howToBuyRef} className="pt-20 lg:pt-10">
         <div className="px-5">
@@ -306,28 +306,33 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <hr className="border-t-2 border-blue-700 w-full mt-10" />
+      <hr className="border-t-2 border-secondary w-full mt-10" />
 
       <section id="tokenomics" ref={tokenomicsRef} className="pt-20 lg:pt-10">
         <div className="text-4xl pb-5 text-center font-bold">Tokenomics</div>
-        <div>
-          <Image src="/Tokenomics.png" alt="Tokenomics" width={600} height={600} className="rounded-lg w-full h-auto" />
+        <div className="flex justify-center">
+          <Image
+            src="/Tokenomics.png"
+            alt="Tokenomics"
+            width={600}
+            height={600}
+            className="rounded-lg w-full h-auto max-w-md"
+          />
         </div>
         <div className="text-4xl text-center pt-2.5 italic">Ouch, Charlie!</div>
         <div className="text-4xl text-center pb-2.5 italic">That really hurt.</div>
-        <div>
+        <div className="flex justify-center">
           <Image
-            src="/CharlieBaby2.jpg"
+            src="/OuchCharlie.png"
             alt="Charlie Baby"
             width={600}
             height={600}
-            className="rounded-lg w-full h-auto"
+            className="rounded-lg w-full h-auto max-w-md"
           />
         </div>
       </section>
 
-      <hr className="border-t-2 border-blue-700 w-full mt-10" />
-
+      <hr className="border-t-2 border-secondary w-full mt-10" />
       {/* <section id="roadmap" ref={roadmapRef} className="pt-[var(--header-height)] lg:pt-10"> */}
       <section id="roadmap" ref={roadmapRef} className="pt-20 lg:pt-10">
         <div className="w-full px-5">
@@ -337,11 +342,11 @@ const Home: NextPage = () => {
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col items-center">
               <Image
-                src="/CharlieWaging.gif"
-                alt="Charlie Cat Sitting"
+                src="/WaggingCharlie.gif"
+                alt="Charlie Bull Wagging Tail"
                 width={600}
                 height={600}
-                className="rounded-lg"
+                className="rounded-lg w-full h-auto max-w-md"
                 unoptimized
               />
               <div className="text-4xl text-center p-5 italic">Step 3: Lambo</div>
