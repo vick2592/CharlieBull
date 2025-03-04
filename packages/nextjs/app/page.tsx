@@ -18,6 +18,7 @@ const Home: NextPage = () => {
   // const { address: connectedAddress } = useAccount();
   const homeRef = useRef<HTMLDivElement>(null);
   const howToBuyRef = useRef<HTMLDivElement>(null);
+  // const aiRef = useRef<HTMLDivElement>(null);
   const tokenomicsRef = useRef<HTMLDivElement>(null);
   const roadmapRef = useRef<HTMLDivElement>(null);
   const logoContainerRef = useRef<HTMLDivElement>(null);
@@ -162,7 +163,7 @@ const Home: NextPage = () => {
           </h1>
           <div className="mx-5 md:mx-20 p-3 text-center">
             <div className="text-4xl text-center m-1">Welcome to Charlie Bull,</div>
-            <div className="text-4xl text-center font-bold">The first Cross-Chain meme coin on Ethereum!</div>
+            <div className="text-4xl text-center font-bold">The first Cross-Chain AI pup on Ethereum!</div>
           </div>
         </div>
 
@@ -305,6 +306,14 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      {/* <hr className="border-t-2 border-secondary w-full" />
+
+      <section id="ai-integration" ref={aiRef} className="pt-20 lg:pt-10">
+        <div className="px-5">
+          <div className="text-4xl text-center font-bold">Charlie X AI16Z</div>
+        </div>
+      </section> */}
 
       <hr className="border-t-2 border-secondary w-full mt-10" />
 
