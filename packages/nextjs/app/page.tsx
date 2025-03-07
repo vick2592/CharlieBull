@@ -345,9 +345,9 @@ const Home: NextPage = () => {
       {/* <section id="roadmap" ref={roadmapRef} className="pt-[var(--header-height)] lg:pt-10"> */}
       <section id="roadmap" ref={roadmapRef} className="pt-20 lg:pt-10">
         <div className="w-full px-5">
-          <div className="text-4xl text-center pb-5 font-bold">Roadmap</div>
-          <div className="text-4xl text-center p-5 italic">Step 1: Buy</div>
-          <div className="text-4xl text-center p-5 italic">Step 2: HODL</div>
+          <div className="text-4xl text-center pb-5 font-bold">Journey 2025</div>
+          <div className="text-4xl text-center p-5 italic">Q1: Buy and HODL</div>
+          <div className="text-4xl text-center p-5 italic">Q2: Help Charlie grow LPs on Ethereum</div>
           <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
             <div className="flex flex-col items-center">
               <Image
@@ -358,7 +358,7 @@ const Home: NextPage = () => {
                 className="rounded-lg w-full h-auto max-w-md"
                 unoptimized
               />
-              <div className="text-4xl text-center p-5 italic">Step 3: Lambo</div>
+              <div className="text-4xl text-center p-5 italic">Q3: Lambo!</div>
             </div>
           </div>
         </div>
