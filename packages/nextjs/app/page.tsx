@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
+// import dynamic from "next/dynamic";
+import Image from "next/legacy/image";
 import { AppConfig } from "../types/types";
+import { SquidWidget } from "@0xsquid/widget";
 import type { NextPage } from "next";
 // import { useAccount } from "wagmi";
 import { Address } from "~~/components/scaffold-eth";
@@ -12,7 +13,7 @@ import { RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 // Import the AppConfig interface
 
 // Dynamically import SquidWidget with SSR disabled
-const SquidWidget = dynamic(() => import("@0xsquid/widget").then(mod => mod.SquidWidget), { ssr: false });
+// const SquidWidget = dynamic(() => import("@0xsquid/widget").then(mod => mod.SquidWidget), { ssr: false });
 
 const Home: NextPage = () => {
   // const { address: connectedAddress } = useAccount();
@@ -179,83 +180,41 @@ const Home: NextPage = () => {
         </div>
 
         <div className="flex justify-center items-center" ref={logoContainerRef}>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/ETHLogo.png"
-              alt="Ethereum Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/ETHLogo.png" alt="Ethereum Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/AvaxLogo.png"
-              alt="Avalanche Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/AvaxLogo.png" alt="Avalanche Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/ArbLogo.png"
-              alt="Arbitrum Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/ArbLogo.png" alt="Arbitrum Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
         </div>
         <div className="flex justify-center items-center mt-10" ref={logoContainerRef}>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/MantleLogo.png"
-              alt="Mantle Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/MantleLogo.png" alt="Mantle Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
             <Image src="/BaseLogo.png" alt="Base Logo" width={75} height={75} className="rounded-lg mx-5 opacity-60" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/LineaLogo.png"
-              alt="Linea Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/LineaLogo.png" alt="Linea Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
         </div>
         <div className="flex justify-center items-center mt-10 mb-20" ref={logoContainerRef}>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/BlastLogo.png"
-              alt="Blast Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-60"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/BlastLogo.png" alt="Blast Logo" width={75} height={75} className="rounded-lg opacity-60" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="/PolLogo.png"
-              alt="Polygon Logo"
-              width={75}
-              height={75}
-              className="rounded-lg mx-5 opacity-75"
-            />
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
+            <Image src="/PolLogo.png" alt="Polygon Logo" width={75} height={75} className="rounded-lg opacity-75" />
           </a>
-          <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://google.com" target="_blank" className="mx-5" rel="noopener noreferrer">
             <Image
               src="/BNBLogo.png"
               alt="Binance Chain Logo"
               width={75}
               height={75}
-              className="rounded-lg mx-5 opacity-75"
+              className="rounded-lg opacity-75"
             />
           </a>
         </div>
