@@ -1,8 +1,6 @@
-import { getPublicClient } from "@wagmi/core";
 import { Hash, SendTransactionParameters, TransactionReceipt, WalletClient } from "viem";
-import { Config, useWalletClient } from "wagmi";
+import { Config, usePublicClient, useWalletClient } from "wagmi";
 import { SendTransactionMutate } from "wagmi/query";
-import { wagmiConfig } from "~~/services/web3/wagmiConfig";
 import { getBlockExplorerTxLink, getParsedError, notification } from "~~/utils/scaffold-eth";
 import { TransactorFuncOptions } from "~~/utils/scaffold-eth/contract";
 
@@ -35,6 +33,9 @@ const TxnNotification = ({ message, blockExplorerLink }: { message: string; bloc
 export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => {
   let walletClient = _walletClient;
   const { data } = useWalletClient();
+  // Use the hook to get the public client directly
+  const publicClient = usePublicClient();
+
   if (walletClient === undefined && data) {
     walletClient = data;
   }
@@ -52,8 +53,7 @@ export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => 
     let blockExplorerTxURL = "";
     try {
       const network = await walletClient.getChainId();
-      // Get full transaction from public client
-      const publicClient = getPublicClient(wagmiConfig);
+      // No need to get publicClient here since we're using the hook above
 
       notificationId = notification.loading(<TxnNotification message="Awaiting for user confirmation" />);
       if (typeof tx === "function") {
@@ -73,6 +73,9 @@ export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => 
         <TxnNotification message="Waiting for transaction to complete." blockExplorerLink={blockExplorerTxURL} />,
       );
 
+      if (!publicClient) {
+        throw new Error("Public client is not available");
+      }
       transactionReceipt = await publicClient.waitForTransactionReceipt({
         hash: transactionHash,
         confirmations: options?.blockConfirmations,

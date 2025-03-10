@@ -56,5 +56,8 @@
     "type-fest": "~4.6.0",
     "typescript": "5.5.3",
     "vercel": "latest"
+  },
+  "resolutions": {
+    "viem": "2.21.7"
   }
 }

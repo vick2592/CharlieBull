@@ -84,7 +84,7 @@ export const Header = () => {
         <div className="navbar-start w-auto lg:w-1/2">
           <a href="#home" className="flex items-center gap-2 shrink-0">
             <div className="flex relative w-20 h-20">
-              <Image alt="Charlie" className="cursor-pointer" layout="fill" src="/logo.svg" />
+              <Image alt="Charlie" className="cursor-pointer" fill src="/logo.svg" />
             </div>
             <div className="flex flex-col">
               {/* <span className="font-sawer font-bold leading-tight text-3xl">Charlie</span> */}
